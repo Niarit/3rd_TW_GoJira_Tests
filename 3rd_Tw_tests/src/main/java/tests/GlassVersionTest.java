@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -67,6 +68,9 @@ public class GlassVersionTest {
         releasesPage.deleteRelease();
     }
 
-
+    @AfterEach
+    public void quit(){
+        driver.quit();
+    }
 
 }
