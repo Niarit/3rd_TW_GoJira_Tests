@@ -9,6 +9,7 @@ public class GlassPage {
     private By browseProjectGlassPermission = By.xpath("//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]");
     private By createIssueGlassPermission = By.xpath("//tr[8]//td[3]//div[1]");
     private By editIssueGlassPermission = By.xpath("//tr[18]//td[3]//div[1]");
+    private By versionsTab = By.xpath("//a[@id='aui-uid-1']");
 
 
     public GlassPage(WebDriver driver) {
@@ -17,6 +18,10 @@ public class GlassPage {
 
     public void navigateToGlassPermissions(){
         driver.findElement(glassPermissionsTab).click();
+    }
+
+    public void navigateToGlassVersions(){
+        driver.findElement(versionsTab).click();
     }
 
     public String getGlassPermissionForBrowseProject(){
