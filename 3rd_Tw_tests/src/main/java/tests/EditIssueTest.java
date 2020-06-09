@@ -51,7 +51,7 @@ public class EditIssueTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1,0} )
+    @ValueSource(ints = {0,1} )
     public void editIssueOnEditScreen(int option){
         driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/EditIssue!default.jspa?id=10033");
         mainTestingProjectPage = new MainTestingProjectPage(driver);

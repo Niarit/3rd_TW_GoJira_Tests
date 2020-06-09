@@ -44,7 +44,7 @@ public class LoginTest {
         loginPage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
         driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
         profilePage = new ProfilePage(driver);
-        Assertions.assertEquals(System.getenv("USER_NAME"), profilePage.getProfileName());
+        Assertions.assertEquals(System.getenv("USER_NAME"), profilePage.getProfileName().toLowerCase());
     }
 
     @Test
