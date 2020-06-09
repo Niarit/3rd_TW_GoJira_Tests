@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class GlassPage {
-    private WebDriver driver;
-    private By glassPermissionsTab = By.xpath("//a[contains(text(),'Permissions')]");
-    private By browseProjectGlassPermission = By.xpath("//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]");
-    private By createIssueGlassPermission = By.xpath("//tr[8]//td[3]//div[1]");
-    private By editIssueGlassPermission = By.xpath("//tr[18]//td[3]//div[1]");
-    private By versionsTab = By.xpath("//a[@id='aui-uid-1']");
+    private final WebDriver driver;
+    private final By glassPermissionsTab = By.xpath("//a[contains(text(),'Permissions')]");
+    private final By browseProjectGlassPermission = By.xpath("//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]");
+    private final By createIssueGlassPermission = By.xpath("//tr[8]//td[3]//div[1]");
+    private final By editIssueGlassPermission = By.xpath("//tr[18]//td[3]//div[1]");
+    private final By versionsTab = By.xpath("//a[@id='aui-uid-1']");
 
 
     public GlassPage(WebDriver driver) {
