@@ -7,12 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MainTestingProjectPage {
-    private WebDriver driver;
-    private By summery = By.id("summary-val");
-    private By editBtn = By.id("edit-issue");
-    private By editScreenSummery = By.id("summary");
-    private By updateBtn = By.id("edit-issue-submit");
-    private By cancel = By.xpath("//a[@class='cancel']");
+    private final WebDriver driver;
+    private final By summery = By.id("summary-val");
+    private final By editBtn = By.id("edit-issue");
+    private final By editScreenSummery = By.id("summary");
+    private final By updateBtn = By.id("edit-issue-submit");
+    private final By cancel = By.xpath("//a[@class='cancel']");
 
     public MainTestingProjectPage(WebDriver driver) {
         this.driver = driver;
