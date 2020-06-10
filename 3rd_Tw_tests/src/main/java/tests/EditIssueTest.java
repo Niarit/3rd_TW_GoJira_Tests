@@ -19,32 +19,20 @@ import pages.ProjectIssuePages;
 import java.util.concurrent.TimeUnit;
 
 public class EditIssueTest {
-    private WebDriver driver;
-    private final String driverPath = System.getenv("DRIVER_PATH");
-    private final String driverName = System.getenv("DRIVER");
-    private final String browserName = System.getenv("BROWSER");
     private MainTestingProjectPage mainTestingProjectPage;
+    private final BaseTest baseTest = new BaseTest();
 
 
     @BeforeEach
     public void setup(){
-        System.setProperty(driverName, driverPath);
-        if (browserName.equals("Firefox")){
-            driver = new FirefoxDriver();
-        } else if(browserName.equals("Chrome")){
-            driver = new ChromeDriver();
-        }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
+        baseTest.setup();
+        baseTest.loginToJira();
     }
 
     @Test
     public void inlineEditTest(){
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-1");
-        mainTestingProjectPage = new MainTestingProjectPage(driver);
+        mainTestingProjectPage = new MainTestingProjectPage(baseTest.getDriver());
+        mainTestingProjectPage.navigateToMTP1Issue();
         mainTestingProjectPage.setSummaryTo("sfdg, a fine juicy apple - test");
         Assertions.assertEquals("sfdg, a fine juicy apple - test", mainTestingProjectPage.getSummaryText());
         mainTestingProjectPage.setSummaryTo("sfdg, a fine juicy apple");
@@ -53,8 +41,8 @@ public class EditIssueTest {
     @ParameterizedTest
     @ValueSource(ints = {0,1} )
     public void editIssueOnEditScreen(int option){
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/EditIssue!default.jspa?id=10033");
-        mainTestingProjectPage = new MainTestingProjectPage(driver);
+        mainTestingProjectPage = new MainTestingProjectPage(baseTest.getDriver());
+        mainTestingProjectPage.navigateToIssuesEditPage();
         mainTestingProjectPage.setSummeryOnEditScreen("sfdg, a fine juicy apple - test");
         if (option == 1){
             mainTestingProjectPage.clickUpdate();
@@ -62,7 +50,7 @@ public class EditIssueTest {
             mainTestingProjectPage.setSummaryTo("sfdg, a fine juicy apple");
         } else if(option == 0){
             mainTestingProjectPage.clickCancel();
-            WebDriverWait wait = new WebDriverWait(driver, 5);
+            WebDriverWait wait = new WebDriverWait(baseTest.getDriver(), 5);
             wait.until(ExpectedConditions.alertIsPresent());
             System.out.println("Alert");
             //Todo ask about "IPDL protocol error: Handler returned error code!"
@@ -72,13 +60,13 @@ public class EditIssueTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/editIssueData.csv", numLinesToSkip = 1)
     public void checkEditOnGivenIssues(String issueUrl){
-        driver.navigate().to(issueUrl);
-        ProjectIssuePages projectIssuePages = new ProjectIssuePages(driver);
+        baseTest.getDriver().navigate().to(issueUrl);
+        ProjectIssuePages projectIssuePages = new ProjectIssuePages(baseTest.getDriver());
         projectIssuePages.isEditBtnPresent();
     }
 
     @AfterEach
     public void quit(){
-        driver.quit();
+        baseTest.close();
     }
 }

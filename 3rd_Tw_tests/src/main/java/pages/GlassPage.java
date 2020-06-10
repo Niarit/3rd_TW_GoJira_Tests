@@ -49,4 +49,8 @@ public class GlassPage {
         return driver.findElement(latestRelease).getText();
     }
 
+    public void navigateToGlassPage(){
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.codecanvas.glass:glass");
+    }
+
 }

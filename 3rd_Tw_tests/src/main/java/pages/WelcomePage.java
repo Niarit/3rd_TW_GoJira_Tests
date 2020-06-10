@@ -30,4 +30,9 @@ public class WelcomePage {
         driver.findElement(issuesDrpd).click();
         driver.findElement(searchForIssue).click();
     }
+
+    public void waitForProfilePic(){
+        wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(profilePic));
+    }
 }

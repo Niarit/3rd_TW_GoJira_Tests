@@ -60,4 +60,8 @@ public class ReleasesPage {
     public void confirmEdit(){
         driver.findElement(confirmEdit).click();
     }
+
+    public void navigateToPP1ReleasePage(){
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
+    }
 }
