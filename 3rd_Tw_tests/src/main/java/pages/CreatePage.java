@@ -18,11 +18,8 @@ public class CreatePage {
     private String issueType;
     private String summary;
 
-    public CreatePage(WebDriver driver, String projectName, String issueType, String summary) {
+    public CreatePage(WebDriver driver) {
         this.driver = driver;
-        this.projectName = projectName;
-        this.issueType = issueType;
-        this.summary = summary;
     }
 
     public void fillFieldsOfNewIssue() {
