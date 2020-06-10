@@ -14,4 +14,8 @@ public class TestIssuePage {
     public String getIssueName(){
         return driver.findElement(issuesName).getText();
     }
+
+    public void navigateToTestIssuePage(){
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-123?jql=key%20%3D%20MTP-123");
+    }
 }

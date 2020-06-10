@@ -16,44 +16,31 @@ import pages.ProjectPage;
 import java.util.concurrent.TimeUnit;
 
 public class BrowseProjectTest {
-
-    private WebDriver driver;
-    private final String driverPath = System.getenv("DRIVER_PATH");
-    private final String driverName = System.getenv("DRIVER");
-    private final String browserName = System.getenv("BROWSER");
+    private final BaseTest baseTest = new BaseTest();
 
     @BeforeEach
     public void setup(){
-        System.setProperty(driverName, driverPath);
-        if (browserName.equals("Firefox")){
-            driver = new FirefoxDriver();
-        } else if(browserName.equals("Chrome")){
-            driver = new ChromeDriver();
-        }
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-        LoginPage loginpage = new LoginPage(driver);
-        loginpage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
+        baseTest.setup();
+        baseTest.loginToJira();
     }
 
     @Test
     public void browseAllProjects() {
-        AllProjectsPage allProjectsPage = new AllProjectsPage(driver);
-        ProjectPage projectPage = new ProjectPage(driver);
+        AllProjectsPage allProjectsPage = new AllProjectsPage(baseTest.getDriver());
+        ProjectPage projectPage = new ProjectPage(baseTest.getDriver());
         allProjectsPage.navigateToAllProjects();
         Assertions.assertEquals("Main Testing Project", projectPage.getProjectName());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"https://jira.codecool.codecanvas.hu/projects/TOUCAN/", "https://jira.codecool.codecanvas.hu/projects/JETI/", "https://jira.codecool.codecanvas.hu/projects/COALA/"})
-    public void browseProject(String projectUrl) throws InterruptedException {
-        ProjectPage projectPage = new ProjectPage(driver, projectUrl);
+    public void browseProject(String projectUrl){
+        ProjectPage projectPage = new ProjectPage(baseTest.getDriver(), projectUrl);
         projectPage.navigateToProjectPage();
     }
 
     @AfterEach
     public void close() {
-        driver.quit();
+        baseTest.close();
     }
 }

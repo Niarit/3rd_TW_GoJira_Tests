@@ -3,14 +3,12 @@ package tests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.LoginPage;
 import pages.WelcomePage;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class Test {
+public class BaseTest {
 
     private WebDriver driver;
     private final String driverPath = System.getenv("DRIVER_PATH");
@@ -28,6 +26,9 @@ public abstract class Test {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
+    }
+
+    public void loginToJira(){
         LoginPage loginpage = new LoginPage(driver);
         loginpage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
         WelcomePage welcomePage = new WelcomePage(driver);

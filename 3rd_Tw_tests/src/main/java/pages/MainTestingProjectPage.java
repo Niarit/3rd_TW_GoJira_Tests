@@ -54,4 +54,12 @@ public class MainTestingProjectPage {
         driver.findElement(cancel).click();
     }
 
+    public void navigateToMTP1Issue(){
+       driver.navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-1");
+    }
+
+    public void navigateToIssuesEditPage(){
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/EditIssue!default.jspa?id=10033");
+    }
+
 }
