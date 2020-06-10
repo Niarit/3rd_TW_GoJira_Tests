@@ -8,24 +8,22 @@ public class ProjectPage {
 
     private final WebDriver driver;
     private String projectUrl;
-    private String projectName;
-    private final By byProjectName = By.linkText(projectName);
+    private final By ProjectName = By.id("project-name-val");
 
-
-    public ProjectPage(WebDriver driver, String projectUrl, String projectName) {
+    public ProjectPage(WebDriver driver, String projectUrl) {
         this.driver = driver;
         this.projectUrl = projectUrl;
-        this.projectName = projectName;
     }
 
-    public ProjectPage(WebDriver driver, String projectName) {
+    public ProjectPage(WebDriver driver) {
         this.driver = driver;
-        this.projectName = projectName;
     }
 
     public void navigateToProjectPage() {
         driver.navigate().to(projectUrl);
     }
 
-
+    public String getProjectName() {
+        return driver.findElement(ProjectName).getText();
+    }
 }

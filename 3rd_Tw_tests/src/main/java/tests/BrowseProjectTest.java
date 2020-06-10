@@ -1,14 +1,17 @@
 package tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AllProjectsPage;
 import pages.LoginPage;
-import pages.TestIssuePage;
+import pages.ProjectPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,6 +40,20 @@ public class BrowseProjectTest {
     @Test
     public void browseAllProjects() {
         AllProjectsPage allProjectsPage = new AllProjectsPage(driver);
+        ProjectPage projectPage = new ProjectPage(driver);
         allProjectsPage.navigateToAllProjects();
+        Assertions.assertEquals("Main Testing Project", projectPage.getProjectName());
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"https://jira.codecool.codecanvas.hu/projects/TOUCAN/", "https://jira.codecool.codecanvas.hu/projects/JETI/", "https://jira.codecool.codecanvas.hu/projects/COALA/"})
+    public void browseProject(String projectUrl) throws InterruptedException {
+        ProjectPage projectPage = new ProjectPage(driver, projectUrl);
+        projectPage.navigateToProjectPage();
+    }
+
+    @AfterEach
+    public void close() {
+        driver.quit();
     }
 }
