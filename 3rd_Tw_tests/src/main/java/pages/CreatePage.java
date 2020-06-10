@@ -22,10 +22,17 @@ public class CreatePage {
         this.driver = driver;
     }
 
-    public void fillFieldsOfNewIssue() {
+    public void fillProjectName() {
         driver.findElement(byProjectName).sendKeys(projectName);
+    }
+
+    public void fillIssueType() {
         driver.findElement(byIssueType).sendKeys(issueType);
+    }
+
+    public void fillSummary() {
         driver.findElement(bySummary).sendKeys(summary);
+
     }
 
     public void createIssue() {
