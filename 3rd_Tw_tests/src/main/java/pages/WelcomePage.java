@@ -30,4 +30,8 @@ public class WelcomePage {
         driver.findElement(issuesDrpd).click();
         driver.findElement(searchForIssue).click();
     }
+
+    public By getProfilePic(){
+        return profilePic;
+    }
 }

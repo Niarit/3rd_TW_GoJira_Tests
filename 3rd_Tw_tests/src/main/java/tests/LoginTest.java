@@ -21,8 +21,6 @@ public class LoginTest {
     private final String driverName = System.getenv("DRIVER");
     private final String browserName = System.getenv("BROWSER");
     private LoginPage loginPage;
-    private ProfilePage profilePage;
-    private WelcomePage welcomePage;
 
     @BeforeEach
     public void setup(){
@@ -43,7 +41,7 @@ public class LoginTest {
         loginPage = new LoginPage(driver);
         loginPage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
         driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
-        profilePage = new ProfilePage(driver);
+        ProfilePage profilePage = new ProfilePage(driver);
         Assertions.assertEquals(System.getenv("USER_NAME"), profilePage.getProfileName().toLowerCase());
     }
 
@@ -58,7 +56,7 @@ public class LoginTest {
     public void logout(){
         loginPage = new LoginPage(driver);
         loginPage.logIntoJira(System.getenv("USER_NAME"), System.getenv("PW"));
-        welcomePage = new WelcomePage(driver);
+        WelcomePage welcomePage = new WelcomePage(driver);
         welcomePage.logOutOfJira();
     }
 
