@@ -10,16 +10,13 @@ import pages.WelcomePage;
 
 import java.util.concurrent.TimeUnit;
 
-public class Test {
+public abstract class Test {
 
     private WebDriver driver;
     private final String driverPath = System.getenv("DRIVER_PATH");
     private final String driverName = System.getenv("DRIVER");
     private final String browserName = System.getenv("BROWSER");
 
-    public Test(WebDriver driver) {
-        this.driver = driver;
-    }
 
     public void setup(){
         System.setProperty(driverName, driverPath);
@@ -33,13 +30,15 @@ public class Test {
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
         LoginPage loginpage = new LoginPage(driver);
         loginpage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         WelcomePage welcomePage = new WelcomePage(driver);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(welcomePage.getProfilePic()));
+        welcomePage.waitForProfilePic();
     }
 
     public void close() {
         driver.quit();
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
 }
