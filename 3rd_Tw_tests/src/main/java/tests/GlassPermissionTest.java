@@ -4,25 +4,24 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.GlassPage;
 import pages.LoginPage;
-import pages.ProfilePage;
-import pages.WelcomePage;
+import pages.MainTestingProjectPage;
+import pages.PrivateProjectPage;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class LoginTest {
+public class GlassPermissionTest {
     private WebDriver driver;
     private final String driverPath = System.getenv("DRIVER_PATH");
     private final String driverName = System.getenv("DRIVER");
     private final String browserName = System.getenv("BROWSER");
-    private LoginPage loginPage;
-    private ProfilePage profilePage;
-    private WelcomePage welcomePage;
+    private MainTestingProjectPage mainTestingProjectPage;
 
     @BeforeEach
     public void setup(){
@@ -35,37 +34,24 @@ public class LoginTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
-
-    }
-
-    @Test
-    public void login(){
-        loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.logIntoJira(System.getenv("USER_NAME"),System.getenv("PW"));
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
-        profilePage = new ProfilePage(driver);
-        Assertions.assertEquals(System.getenv("USER_NAME"), profilePage.getProfileName().toLowerCase());
     }
 
     @Test
-    public void loginWithInvalidUsername(){
-        loginPage = new LoginPage(driver);
-        loginPage.logIntoJira("invalidUser", System.getenv("PW"));
-        loginPage.checkError();
+    public void checkPermissions(){
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/plugins/servlet/project-config/PP1/permissions");
+        PrivateProjectPage privateProjectPage = new PrivateProjectPage(driver);
+        List<String> permissions = privateProjectPage.getPermissions();
+        driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.codecanvas.glass:glass");
+        GlassPage glassPage = new GlassPage(driver);
+        glassPage.navigateToGlassPermissions();
+        List<String> glassPermissions = glassPage.getGlassPermissions();
+        Assertions.assertEquals(permissions,glassPermissions);
     }
-
-    @Test
-    public void logout(){
-        loginPage = new LoginPage(driver);
-        loginPage.logIntoJira(System.getenv("USER_NAME"), System.getenv("PW"));
-        welcomePage = new WelcomePage(driver);
-        welcomePage.logOutOfJira();
-    }
-
-
 
     @AfterEach
-    public void close() {
+    public void quit(){
         driver.quit();
     }
 }
