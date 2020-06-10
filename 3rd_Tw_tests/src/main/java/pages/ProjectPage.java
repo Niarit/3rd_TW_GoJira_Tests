@@ -3,10 +3,12 @@ package pages;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProjectPage {
 
     private final WebDriver driver;
+    private WebDriverWait wait;
     private String projectUrl;
     private final By ProjectName = By.id("project-name-val");
 
@@ -20,6 +22,7 @@ public class ProjectPage {
     }
 
     public void navigateToProjectPage() {
+
         driver.navigate().to(projectUrl);
     }
 
