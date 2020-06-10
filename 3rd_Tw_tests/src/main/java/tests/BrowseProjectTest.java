@@ -33,10 +33,12 @@ public class BrowseProjectTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"https://jira.codecool.codecanvas.hu/projects/TOUCAN/", "https://jira.codecool.codecanvas.hu/projects/JETI/", "https://jira.codecool.codecanvas.hu/projects/COALA/"})
+    @ValueSource(strings = {"https://jira.codecool.codecanvas.hu/projects/TOUCAN", "https://jira.codecool.codecanvas.hu/projects/JETI", "https://jira.codecool.codecanvas.hu/projects/COALA"})
     public void browseProject(String projectUrl){
         ProjectPage projectPage = new ProjectPage(baseTest.getDriver(), projectUrl);
         projectPage.navigateToProjectPage();
+        String projectName = projectUrl.substring(45);
+        Assertions.assertTrue(projectPage.getProjectName().contains(projectName));
     }
 
     @AfterEach
