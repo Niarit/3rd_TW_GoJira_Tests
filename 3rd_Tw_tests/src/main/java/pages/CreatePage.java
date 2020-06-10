@@ -6,15 +6,13 @@ import org.openqa.selenium.WebDriver;
 public class CreatePage {
 
     private final WebDriver driver;
-    private final By byProjectName = By.id("project");
+    private final By byProjectName = By.id("project-field");
     private final By byIssueType = By.id("issuetype-field");
     private final By bySummary = By.id("summary");
     private final By createBtn = By.id("create-issue-submit");
     private final By cancelBtn = By.className("cancel");
     private final By errorMsg = By.className("error");
     private final By projectOptions = By.id("project-options");
-    //private final String projectValidationName = projectOptions.getAttribute("aria-activedescendant").substring(0,length);
-
 
     private String projectName;
     private String issueType;
@@ -41,7 +39,7 @@ public class CreatePage {
         driver.findElement(cancelBtn).click();
     }
 
-    public void validateProjectName() {
-
+    public boolean isProjectAvailable(String testedProjectName) {
+        return driver.findElement(byProjectName).getAttribute("aria-activedescendant").contains(testedProjectName);
     }
 }
