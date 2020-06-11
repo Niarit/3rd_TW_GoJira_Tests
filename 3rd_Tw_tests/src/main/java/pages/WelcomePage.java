@@ -39,6 +39,6 @@ public class WelcomePage {
     }
 
     public void clickCreateBtn() {
-        driver.findElement(createBtn).click();
+        createBtn.click();
     }
 }
