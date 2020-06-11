@@ -11,6 +11,7 @@ public class ProjectPage {
     private WebDriverWait wait;
     private String projectUrl;
     private final By ProjectName = By.id("project-name-val");
+    private final By summary = By.id("summary-val");
 
     public ProjectPage(WebDriver driver, String projectUrl) {
         this.driver = driver;
@@ -28,5 +29,9 @@ public class ProjectPage {
 
     public String getProjectName() {
         return driver.findElement(ProjectName).getText();
+    }
+
+    public String getSummary() {
+        return driver.findElement(summary).getText();
     }
 }

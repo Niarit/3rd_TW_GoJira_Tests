@@ -35,4 +35,8 @@ public class WelcomePage {
         wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(profilePic));
     }
+
+    public void clickCreateBtn() {
+        driver.findElement(createBtn).click();
+    }
 }
