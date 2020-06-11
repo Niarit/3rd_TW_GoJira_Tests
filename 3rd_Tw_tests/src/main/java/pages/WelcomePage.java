@@ -37,4 +37,8 @@ public class WelcomePage {
         wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='aui-avatar aui-avatar-small']")));
     }
+
+    public void clickCreateBtn() {
+        driver.findElement(createBtn).click();
+    }
 }
