@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,30 +12,31 @@ import java.util.List;
 
 public class GlassPage {
     private final WebDriver driver;
-    private final By glassPermissionsTab = By.xpath("//a[contains(text(),'Permissions')]");
-    private final By browseProjectGlassPermission = By.xpath("//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]");
-    private final By createIssueGlassPermission = By.xpath("//tr[8]//td[3]//div[1]");
-    private final By editIssueGlassPermission = By.xpath("//tr[18]//td[3]//div[1]");
-    private final By versionsTab = By.xpath("//a[@id='aui-uid-1']");
-    private final By latestRelease = By.xpath("//div[@id='glass-general-versions-panel']//tr[2]//td[1]");
+    @FindBy(xpath = "//a[contains(text(),'Permissions')]") private WebElement glassPermissionsTab;
+    @FindBy(xpath = "//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]") private WebElement browseProjectGlassPermission;
+    @FindBy(xpath = "//tr[8]//td[3]//div[1]") private WebElement createIssueGlassPermission;
+    @FindBy(xpath = "//tr[18]//td[3]//div[1]") private WebElement editIssueGlassPermission;
+    @FindBy(xpath = "//a[@id='aui-uid-1']") private WebElement versionsTab;
+    @FindBy(xpath = "//div[@id='glass-general-versions-panel']//tr[2]//td[1]") private WebElement latestRelease;
 
 
     public GlassPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void navigateToGlassPermissions(){
-        driver.findElement(glassPermissionsTab).click();
+        glassPermissionsTab.click();
     }
 
     public void navigateToGlassVersions(){
-        driver.findElement(versionsTab).click();
+        versionsTab.click();
     }
 
     public List<String> getGlassPermissions(){
-        List<String> glassPermissions = Arrays.asList(driver.findElement(browseProjectGlassPermission).getAttribute("class"),
-                driver.findElement(createIssueGlassPermission).getAttribute("class"),
-                driver.findElement(editIssueGlassPermission).getAttribute("class"));
+        List<String> glassPermissions = Arrays.asList(browseProjectGlassPermission.getAttribute("class"),
+                createIssueGlassPermission.getAttribute("class"),
+                editIssueGlassPermission.getAttribute("class"));
         List<String> translatedGlassPermissions = new ArrayList<String>();
         for (String permission :
                 glassPermissions) {
@@ -46,7 +50,7 @@ public class GlassPage {
     }
 
     public String getLatestReleaseName(){
-        return driver.findElement(latestRelease).getText();
+        return latestRelease.getText();
     }
 
     public void navigateToGlassPage(){

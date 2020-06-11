@@ -4,64 +4,68 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReleasesPage {
     private final WebDriver driver;
     private WebDriverWait wait;
-    private final By versionNameField = By.xpath("//input[@placeholder='Version name']");
-    private final By startDateField = By.xpath("//input[@placeholder='Start date (optional)']");
-    private final By releaseDateField = By.xpath("//input[@placeholder='Release date (optional)']");
-    private final By descriptionField = By.xpath("//input[@placeholder='Description (optional)']");
-    private final By addBtn = By.xpath("//button[@class='aui-button aui-button-primary']");
-    private final By actionsBtn = By.xpath("//a[@class='aui-button aui-button-subtle aui-button-compact aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default details-button']");
-    private final By deleteBtn = By.xpath("//a[@class='project-config-operations-delete']");
-    private final By confirmBtn = By.id("submit");
-    private final By editBtn = By.xpath("//a[@class='version-edit-dialog']");
-    private final By editNameField = By.id("version-name");
-    private final By confirmEdit = By.id("version-save-submit");
+    @FindBy(xpath = "//input[@placeholder='Version name']") private WebElement versionNameField;
+    @FindBy(xpath = "//input[@placeholder='Start date (optional)']") private WebElement startDateField;
+    @FindBy(xpath = "//input[@placeholder='Release date (optional)']") private WebElement releaseDateField;
+    @FindBy(xpath = "//input[@placeholder='Description (optional)']")private WebElement descriptionField;
+    @FindBy(xpath = "//button[@class='aui-button aui-button-primary']") private WebElement addBtn;
+    @FindBy(xpath = "//a[@class='aui-button aui-button-subtle aui-button-compact aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default details-button']")
+    private WebElement actionsBtn;
+    @FindBy(xpath = "//a[@class='project-config-operations-delete']") private WebElement deleteBtn;
+    @FindBy(id = "submit") private WebElement confirmBtn;
+    @FindBy(xpath = "//a[@class='version-edit-dialog']") private WebElement editBtn;
+    @FindBy(id = "version-name") private WebElement editNameField;
+    @FindBy(id = "version-save-submit") private WebElement confirmEdit;
 
     public ReleasesPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void addVersionName(String name){
-        driver.findElement(versionNameField).sendKeys(name);
+        versionNameField.sendKeys(name);
     }
 
     public void clickAddBtn(){
-        driver.findElement(addBtn).click();
+        addBtn.click();
     }
 
     public void deleteRelease(){
-        driver.findElement(actionsBtn).click();
-        driver.findElement(deleteBtn).click();
+        actionsBtn.click();
+        deleteBtn.click();
         wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(confirmBtn));
-        driver.findElement(confirmBtn).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit")));
+        confirmBtn.click();
     }
 
     public void clickEdit(){
         wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(actionsBtn));
-        driver.findElement(actionsBtn).click();
-        driver.findElement(editBtn).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='aui-button aui-button-subtle aui-button-compact aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default details-button']")));
+        actionsBtn.click();
+        editBtn.click();
     }
 
     public void renameVersion(String msg){
         wait = new WebDriverWait(driver, 5);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(editNameField));
-        WebElement nameField = driver.findElement(editNameField);
-        nameField.sendKeys(Keys.DELETE);
-        nameField.sendKeys(msg);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("version-name")));
+        editNameField.sendKeys(Keys.DELETE);
+        editNameField.sendKeys(msg);
     }
 
     public void confirmEdit(){
-        driver.findElement(confirmEdit).click();
+        confirmEdit.click();
     }
 
     public void navigateToPP1ReleasePage(){
         driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
     }
+
 }
