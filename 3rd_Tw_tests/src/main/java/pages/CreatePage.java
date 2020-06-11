@@ -1,18 +1,20 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CreatePage {
 
     private final WebDriver driver;
-    private final By byProjectName = By.id("project-field");
-    private final By byIssueType = By.id("issuetype-field");
-    private final By bySummary = By.id("summary");
-    private final By createBtn = By.id("create-issue-submit");
-    private final By cancelBtn = By.className("cancel");
-    private final By errorMsg = By.className("error");
-    private final By projectOptions = By.id("project-options");
+    @FindBy(id = "project-field") private WebElement byProjectName;
+    @FindBy(id = "issuetype-field") private WebElement byIssueType;
+    @FindBy(id = "summary") private WebElement bySummary;
+    @FindBy(id = "create-issue-submit") private WebElement createBtn;
+    @FindBy(className = "cancel") private WebElement cancelBtn;
+    @FindBy(className = "error") private WebElement errorMsg;
+    @FindBy(id = "project-options") private WebElement projectOptions;
 
     private String projectName;
     private String issueType;
@@ -23,23 +25,24 @@ public class CreatePage {
         this.projectName = projectName;
         this.issueType = issueType;
         this.summary = summary;
+        PageFactory.initElements(driver, this);
     }
 
     public void fillFieldsOfNewIssue() {
-        driver.findElement(byProjectName).sendKeys(projectName);
-        driver.findElement(byIssueType).sendKeys(issueType);
-        driver.findElement(bySummary).sendKeys(summary);
+        byProjectName.sendKeys(projectName);
+        byIssueType.sendKeys(issueType);
+        bySummary.sendKeys(summary);
     }
 
     public void createIssue() {
-        driver.findElement(createBtn).click();
+        createBtn.click();
     }
 
     public void cancelCreation() {
-        driver.findElement(cancelBtn).click();
+        cancelBtn.click();
     }
 
     public boolean isProjectAvailable(String testedProjectName) {
-        return driver.findElement(byProjectName).getAttribute("aria-activedescendant").contains(testedProjectName);
+        return byProjectName.getAttribute("aria-activedescendant").contains(testedProjectName);
     }
 }

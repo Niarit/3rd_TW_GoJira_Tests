@@ -2,26 +2,30 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import sun.security.krb5.internal.PAData;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class PrivateProjectPage {
     private final WebDriver driver;
-    private final By browseProjectPermission = By.xpath("//tr[@data-permission-key='BROWSE_PROJECTS']/td[@data-headers='security-type']/dl[@class='types']/dd");
-    private final By createIssuePermission = By.xpath("//tr[@data-permission-key='CREATE_ISSUES']/td[@data-headers='security-type']/dl[@class='types']/dd");
-    private final By editIssuePermission = By.xpath("//tr[@data-permission-key='EDIT_ISSUES']/td[@data-headers='security-type']/dl[@class='types']/dd");
+    @FindBy(xpath = "//tr[@data-permission-key='BROWSE_PROJECTS']/td[@data-headers='security-type']/dl[@class='types']/dd") private WebElement browseProjectPermission;
+    @FindBy(xpath = "//tr[@data-permission-key='CREATE_ISSUES']/td[@data-headers='security-type']/dl[@class='types']/dd") private WebElement createIssuePermission;
+    @FindBy(xpath = "//tr[@data-permission-key='EDIT_ISSUES']/td[@data-headers='security-type']/dl[@class='types']/dd") private WebElement editIssuePermission;
 
     public PrivateProjectPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
 
 
     public List<String> getPermissions(){
-        System.out.println(driver.findElement(browseProjectPermission).getText());
-        return Arrays.asList(driver.findElement(browseProjectPermission).getText(),
-                driver.findElement(createIssuePermission).getText(),
-                driver.findElement(editIssuePermission).getText());
+        return Arrays.asList(browseProjectPermission.getText(),
+                createIssuePermission.getText(),
+                editIssuePermission.getText());
     }
 
     public void navigateToPP1Permissions(){
