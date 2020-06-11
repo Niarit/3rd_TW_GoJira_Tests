@@ -2,17 +2,21 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class TestIssuePage {
     private WebDriver driver;
-    private By issuesName = By.xpath("//a[@id='key-val']");
+    @FindBy(xpath = "//a[@id='key-val']") private WebElement issuesName;
 
     public TestIssuePage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public String getIssueName(){
-        return driver.findElement(issuesName).getText();
+        return issuesName.getText();
     }
 
     public void navigateToTestIssuePage(){

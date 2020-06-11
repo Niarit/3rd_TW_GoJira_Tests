@@ -3,14 +3,16 @@ package pages;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class ProjectPage {
 
     private final WebDriver driver;
-    private WebDriverWait wait;
     private String projectUrl;
-    private final By ProjectName = By.id("project-name-val");
+    @FindBy(id = "project-name-val") private WebElement ProjectName;
 
     public ProjectPage(WebDriver driver, String projectUrl) {
         this.driver = driver;
@@ -19,14 +21,14 @@ public class ProjectPage {
 
     public ProjectPage(WebDriver driver) {
         this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
     public void navigateToProjectPage() {
-
         driver.navigate().to(projectUrl);
     }
 
     public String getProjectName() {
-        return driver.findElement(ProjectName).getText();
+        return ProjectName.getText();
     }
 }
