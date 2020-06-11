@@ -13,8 +13,7 @@ public class ProjectPage {
     private final WebDriver driver;
     private String projectUrl;
     @FindBy(id = "project-name-val") private WebElement ProjectName;
-    private final By ProjectName = By.id("project-name-val");
-    private final By summary = By.id("summary-val");
+    @FindBy(id = "summary-val") private WebElement summary;
 
     public ProjectPage(WebDriver driver, String projectUrl) {
         this.driver = driver;
@@ -32,5 +31,10 @@ public class ProjectPage {
 
     public String getProjectName() {
         return ProjectName.getText();
+    }
+
+
+    public String getSummary() {
+        return summary.getText();
     }
 }
