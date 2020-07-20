@@ -1,19 +1,11 @@
-package tests;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.AllProjectsPage;
-import pages.LoginPage;
 import pages.ProjectPage;
-
-import java.util.concurrent.TimeUnit;
 
 public class BrowseProjectTest {
     private final BaseTest baseTest = new BaseTest();
