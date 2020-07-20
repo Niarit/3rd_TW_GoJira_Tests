@@ -16,7 +16,7 @@ public class CreatePage {
     @FindBy(id = "issuetype-field") private WebElement byIssueType;
     @FindBy(id = "summary") private WebElement bySummary;
     @FindBy(id = "create-issue-submit") private WebElement createBtn;
-    @FindBy(className = "cancel") private WebElement cancelBtn;
+    @FindBy(xpath = "//a[@class='cancel']") private WebElement cancelBtn;
     @FindBy(className = "error") private WebElement errorMsg;
     @FindBy(id = "project-options") private WebElement projectOptions;
     @FindBy(id = "create-issue-dialog") private WebElement createIssueDialog;
@@ -93,10 +93,6 @@ public class CreatePage {
             byIssueType.click();
             byIssueType.sendKeys(Keys.DELETE);
             byIssueType.sendKeys(issueType);
-            if (!byIssueType.getAttribute("aria-activedescendant").equals("null")) {
-                byIssueType.sendKeys(Keys.ENTER);
-                createIssueDialog.click();
-            }
         }
     }
 

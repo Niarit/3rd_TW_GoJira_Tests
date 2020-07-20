@@ -18,6 +18,7 @@ public class ProjectPage {
     public ProjectPage(WebDriver driver, String projectUrl) {
         this.driver = driver;
         this.projectUrl = projectUrl;
+        PageFactory.initElements(driver, this);
     }
 
     public ProjectPage(WebDriver driver) {
