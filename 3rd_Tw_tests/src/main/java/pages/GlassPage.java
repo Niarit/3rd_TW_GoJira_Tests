@@ -6,12 +6,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class GlassPage {
-    private final WebDriver driver;
+    private BasePage basePage;
     @FindBy(xpath = "//a[contains(text(),'Permissions')]") private WebElement glassPermissionsTab;
     @FindBy(xpath = "//div[@id='glass-permissions-panel']//tr[5]//td[3]//div[1]") private WebElement browseProjectGlassPermission;
     @FindBy(xpath = "//tr[8]//td[3]//div[1]") private WebElement createIssueGlassPermission;
@@ -20,9 +21,9 @@ public class GlassPage {
     @FindBy(xpath = "//div[@id='glass-general-versions-panel']//tr[2]//td[1]") private WebElement latestRelease;
 
 
-    public GlassPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public GlassPage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public void navigateToGlassPermissions(){
@@ -54,7 +55,7 @@ public class GlassPage {
     }
 
     public void navigateToGlassPage(){
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.codecanvas.glass:glass");
+        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.codecanvas.glass:glass");
     }
 
 }

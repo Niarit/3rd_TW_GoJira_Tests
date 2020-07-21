@@ -6,13 +6,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.MalformedURLException;
+
 public class TestIssuePage {
-    private WebDriver driver;
+    private BasePage basePage;
     @FindBy(xpath = "//a[@id='key-val']") private WebElement issuesName;
 
-    public TestIssuePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public TestIssuePage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public String getIssueName(){
@@ -20,6 +22,6 @@ public class TestIssuePage {
     }
 
     public void navigateToTestIssuePage(){
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-123?jql=key%20%3D%20MTP-123");
+        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-123?jql=key%20%3D%20MTP-123");
     }
 }

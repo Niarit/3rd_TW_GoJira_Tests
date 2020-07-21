@@ -8,17 +8,18 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.MalformedURLException;
 import java.util.List;
 
 
 public class ProjectIssuePages {
-    private final WebDriver driver;
+    private BasePage basePage;
     @FindBy(id = "key-val") private WebElement issueName;
     @FindAll(@FindBy(id = "edit-issue")) private List<WebElement> editBtn;
 
-    public ProjectIssuePages(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ProjectIssuePages() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public String getIssueName(){

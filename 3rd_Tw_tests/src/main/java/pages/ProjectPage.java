@@ -1,33 +1,31 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.net.MalformedURLException;
+
 public class ProjectPage {
 
-    private final WebDriver driver;
+    private BasePage basePage;
     private String projectUrl;
     @FindBy(id = "project-name-val") private WebElement ProjectName;
     @FindBy(id = "summary-val") private WebElement summary;
 
-    public ProjectPage(WebDriver driver, String projectUrl) {
-        this.driver = driver;
+    public ProjectPage(String projectUrl) throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
         this.projectUrl = projectUrl;
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
-    public ProjectPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ProjectPage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public void navigateToProjectPage() {
-        driver.navigate().to(projectUrl);
+        basePage.getDriver().navigate().to(projectUrl);
     }
 
     public String getProjectName() {

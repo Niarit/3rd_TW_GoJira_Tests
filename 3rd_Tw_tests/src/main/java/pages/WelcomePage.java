@@ -8,9 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+
 public class WelcomePage {
 
-    private final WebDriver driver;
+    private BasePage basePage;
     @FindBy(xpath = "//span[@class='aui-avatar aui-avatar-small']") private WebElement profilePic;
     @FindBy(id = "log_out") private WebElement logoutBtn;
     @FindBy(id = "find_link") private WebElement issuesDrpd;
@@ -18,9 +20,9 @@ public class WelcomePage {
     @FindBy(id = "create_link") private WebElement createBtn;
     private WebDriverWait wait;
 
-    public WelcomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public WelcomePage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public void logOutOfJira(){
@@ -29,14 +31,14 @@ public class WelcomePage {
     }
 
     public void navigateToIssuePage(){
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(basePage.getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("find_link")));
         issuesDrpd.click();
         searchForIssue.click();
     }
 
     public void waitForProfilePic(){
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(basePage.getDriver(),10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='aui-avatar aui-avatar-small']")));
     }
 

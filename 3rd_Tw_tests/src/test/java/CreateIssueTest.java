@@ -3,27 +3,35 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import pages.BasePage;
 import pages.CreatePage;
 import pages.ProjectPage;
 import pages.WelcomePage;
-import tests.BaseTest;
+
+import java.net.MalformedURLException;
+
 
 public class CreateIssueTest {
 
     private final BaseTest baseTest = new BaseTest();
+    private BasePage basePage;
+
+    public CreateIssueTest() throws MalformedURLException {
+    }
 
     @BeforeEach
-    public void setup(){
-        baseTest.setup();
+    public void setup() throws MalformedURLException {
+        basePage = BasePage.getInstanceOfBasePage();
+        basePage.setup();
         baseTest.loginToJira();
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/CreateIssueData.csv", numLinesToSkip = 1)
-    public void createPlainIssue(String projectName, String issueType, String summary) {
-        CreatePage createPage = new CreatePage(baseTest.getDriver());
-        WelcomePage welcomePage = new WelcomePage(baseTest.getDriver());
-        ProjectPage projectPage = new ProjectPage(baseTest.getDriver());
+    public void createPlainIssue(String projectName, String issueType, String summary) throws MalformedURLException {
+        CreatePage createPage = new CreatePage();
+        WelcomePage welcomePage = new WelcomePage();
+        ProjectPage projectPage = new ProjectPage();
         welcomePage.clickCreateBtn();
         createPage.fillProjectName(projectName);
         createPage.clickCreateDialog();
@@ -39,9 +47,9 @@ public class CreateIssueTest {
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/CreateIssueData.csv", numLinesToSkip = 1)
-    public void cancelCreation(String projectName, String issueType, String summary) {
-        CreatePage createPage = new CreatePage(baseTest.getDriver());
-        WelcomePage welcomePage = new WelcomePage(baseTest.getDriver());
+    public void cancelCreation(String projectName, String issueType, String summary) throws MalformedURLException {
+        CreatePage createPage = new CreatePage();
+        WelcomePage welcomePage = new WelcomePage();
         welcomePage.clickCreateBtn();
         createPage.fillSummary(summary);
         createPage.clickCreateDialog();
@@ -50,9 +58,9 @@ public class CreateIssueTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/ProjectData.csv", numLinesToSkip = 1)
-    public void createIssueForProject(String projectName, String projectShortName) {
-        CreatePage createPage = new CreatePage(baseTest.getDriver());
-        WelcomePage welcomePage = new WelcomePage(baseTest.getDriver());
+    public void createIssueForProject(String projectName, String projectShortName) throws MalformedURLException {
+        CreatePage createPage = new CreatePage();
+        WelcomePage welcomePage = new WelcomePage();
         welcomePage.clickCreateBtn();
         createPage.fillProjectName(projectName);
         Assertions.assertEquals(projectShortName, createPage.getProjectValidationName());
@@ -64,6 +72,6 @@ public class CreateIssueTest {
 
     @AfterEach
     public void close() {
-        baseTest.close();
+        basePage.closeDriver();
     }
 }

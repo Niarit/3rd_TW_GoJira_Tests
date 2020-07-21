@@ -9,8 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.MalformedURLException;
+
 public class ReleasesPage {
-    private final WebDriver driver;
+    private BasePage basePage;
     private WebDriverWait wait;
     @FindBy(xpath = "//input[@placeholder='Version name']") private WebElement versionNameField;
     @FindBy(xpath = "//input[@placeholder='Start date (optional)']") private WebElement startDateField;
@@ -25,9 +27,9 @@ public class ReleasesPage {
     @FindBy(id = "version-name") private WebElement editNameField;
     @FindBy(id = "version-save-submit") private WebElement confirmEdit;
 
-    public ReleasesPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public ReleasesPage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public void addVersionName(String name){
@@ -41,20 +43,20 @@ public class ReleasesPage {
     public void deleteRelease(){
         actionsBtn.click();
         deleteBtn.click();
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(basePage.getDriver(), 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit")));
         confirmBtn.click();
     }
 
     public void clickEdit(){
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(basePage.getDriver(), 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='aui-button aui-button-subtle aui-button-compact aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default details-button']")));
         actionsBtn.click();
         editBtn.click();
     }
 
     public void renameVersion(String msg){
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(basePage.getDriver(), 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("version-name")));
         editNameField.sendKeys(Keys.DELETE);
         editNameField.sendKeys(msg);
@@ -65,7 +67,7 @@ public class ReleasesPage {
     }
 
     public void navigateToPP1ReleasePage(){
-        driver.navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
+        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
     }
 
 }

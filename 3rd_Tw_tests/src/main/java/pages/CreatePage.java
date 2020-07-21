@@ -8,10 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
 
-public class CreatePage {
+import java.net.MalformedURLException;
 
+public class CreatePage {
+    private BasePage basePage;
     private final String[] issueTypes = {"Bug", "Task", "Story"};
-    private final WebDriver driver;
     @FindBy(id = "project-field") private WebElement byProjectName;
     @FindBy(id = "issuetype-field") private WebElement byIssueType;
     @FindBy(id = "summary") private WebElement bySummary;
@@ -26,9 +27,9 @@ public class CreatePage {
     @FindBy(id = "delete-issue-submit") private WebElement deleteConfirm;
 
 
-    public CreatePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public CreatePage() throws MalformedURLException {
+        this.basePage = BasePage.getInstanceOfBasePage();
+        PageFactory.initElements(basePage.getDriver(), this);
     }
 
     public void fillProjectName(String projectName) {
@@ -59,7 +60,7 @@ public class CreatePage {
 
     public void cancelCreation() {
         cancelBtn.click();
-        driver.switchTo().alert().accept();
+        basePage.getDriver().switchTo().alert().accept();
     }
 
     public boolean isProjectAvailable(String testedProjectName) {
