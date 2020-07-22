@@ -55,7 +55,7 @@ public class GlassPage {
     }
 
     public void navigateToGlassPage(){
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.codecanvas.glass:glass");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/projects/PP1?selectedItem=com.codecanvas.glass:glass");
     }
 
 }

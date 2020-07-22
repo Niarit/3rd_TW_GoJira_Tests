@@ -21,3 +21,4 @@ public class IssuesPage {
         return pageName.getText();
     }
 }
+

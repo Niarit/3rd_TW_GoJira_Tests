@@ -22,6 +22,6 @@ public class TestIssuePage {
     }
 
     public void navigateToTestIssuePage(){
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-123?jql=key%20%3D%20MTP-123");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/browse/MTP-123?jql=key%20%3D%20MTP-123");
     }
 }

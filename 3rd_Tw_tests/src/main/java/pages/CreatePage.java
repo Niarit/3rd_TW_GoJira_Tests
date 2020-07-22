@@ -102,3 +102,4 @@ public class CreatePage {
         createIssueDialog.click();
     }
 }
+

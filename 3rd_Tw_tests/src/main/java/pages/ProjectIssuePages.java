@@ -29,4 +29,5 @@ public class ProjectIssuePages {
     public void isEditBtnPresent(){
         Assertions.assertEquals(1, editBtn.size());
     }
+
 }

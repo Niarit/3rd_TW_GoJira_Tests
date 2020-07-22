@@ -29,7 +29,7 @@ public class PrivateProjectPage {
     }
 
     public void navigateToPP1Permissions(){
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/plugins/servlet/project-config/PP1/permissions");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/plugins/servlet/project-config/PP1/permissions");
     }
 
 }

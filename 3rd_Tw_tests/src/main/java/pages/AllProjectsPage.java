@@ -23,4 +23,5 @@ public class AllProjectsPage {
         allProjects.click();
         mainTestingProject.click();
     }
+
 }

@@ -24,7 +24,7 @@ public class LoginPage {
     }
 
     public void logIntoJira(String username, String password){
-        WebDriverWait wait = new WebDriverWait(basePage.getDriver(), 5);
+        WebDriverWait wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-form-username")));
         usernameField.click();
         usernameField.sendKeys(username);

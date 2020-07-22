@@ -19,5 +19,4 @@ public class ProfilePage {
     public String getProfileName(){
         return profileName.getText();
     }
-
 }

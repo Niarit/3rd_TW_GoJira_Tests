@@ -31,14 +31,14 @@ public class WelcomePage {
     }
 
     public void navigateToIssuePage(){
-        wait = new WebDriverWait(basePage.getDriver(), 10);
+        wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("find_link")));
         issuesDrpd.click();
         searchForIssue.click();
     }
 
     public void waitForProfilePic(){
-        wait = new WebDriverWait(basePage.getDriver(),10);
+        wait = new WebDriverWait(basePage.getDriver(),Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='aui-avatar aui-avatar-small']")));
     }
 

@@ -26,7 +26,7 @@ public class LoginTest {
     @Test
     public void login() throws MalformedURLException {
         baseTest.loginToJira();
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/secure/ViewProfile.jspa");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/secure/ViewProfile.jspa");
         ProfilePage profilePage = new ProfilePage();
         Assertions.assertEquals(System.getenv("USER_NAME"), profilePage.getProfileName().toLowerCase());
     }

@@ -28,7 +28,7 @@ public class MainTestingProjectPage {
     }
 
     public void setSummaryTo(String msg){
-        WebDriverWait wait = new WebDriverWait(basePage.getDriver(), 5);
+        WebDriverWait wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("summary-val")));
         summeryEditBtn.click();
         editScreenSummery.sendKeys(Keys.DELETE);
@@ -58,11 +58,11 @@ public class MainTestingProjectPage {
     }
 
     public void navigateToMTP1Issue(){
-       basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/browse/MTP-1");
+       basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/browse/MTP-1");
     }
 
     public void navigateToIssuesEditPage(){
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/secure/EditIssue!default.jspa?id=10033");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/secure/EditIssue!default.jspa?id=10033");
     }
 
 }

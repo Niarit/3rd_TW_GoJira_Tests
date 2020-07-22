@@ -34,10 +34,10 @@ public class BasePage {
         }
         capability.setBrowserName(System.getenv("BROWSER"));
         capability.setPlatform(Platform.LINUX);
-        driver = new RemoteWebDriver(new URL("https://selenium:"+ System.getenv("PW") +"@seleniumhub.codecool.codecanvas.hu/wd/hub"), capability);
+        driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), capability);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://jira.codecool.codecanvas.hu/secure/Dashboard.jspa");
+        driver.get(System.getenv("BASE_URL") + "/secure/Dashboard.jspa");
     }
 
     public static BasePage getInstanceOfBasePage() throws MalformedURLException {

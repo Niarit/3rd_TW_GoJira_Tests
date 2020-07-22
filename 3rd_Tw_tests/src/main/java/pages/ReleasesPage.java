@@ -43,20 +43,20 @@ public class ReleasesPage {
     public void deleteRelease(){
         actionsBtn.click();
         deleteBtn.click();
-        wait = new WebDriverWait(basePage.getDriver(), 5);
+        wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit")));
         confirmBtn.click();
     }
 
     public void clickEdit(){
-        wait = new WebDriverWait(basePage.getDriver(), 5);
+        wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='aui-button aui-button-subtle aui-button-compact aui-dropdown2-trigger aui-dropdown2-trigger-arrowless aui-style-default details-button']")));
         actionsBtn.click();
         editBtn.click();
     }
 
     public void renameVersion(String msg){
-        wait = new WebDriverWait(basePage.getDriver(), 5);
+        wait = new WebDriverWait(basePage.getDriver(), Integer.parseInt(System.getenv("WAIT")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("version-name")));
         editNameField.sendKeys(Keys.DELETE);
         editNameField.sendKeys(msg);
@@ -67,7 +67,7 @@ public class ReleasesPage {
     }
 
     public void navigateToPP1ReleasePage(){
-        basePage.getDriver().navigate().to("https://jira.codecool.codecanvas.hu/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
+        basePage.getDriver().navigate().to(System.getenv("BASE_URL") + "/projects/PP1?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page");
     }
 
 }
