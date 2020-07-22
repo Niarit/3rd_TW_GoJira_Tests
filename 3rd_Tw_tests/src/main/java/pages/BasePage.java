@@ -17,12 +17,9 @@ public class BasePage {
     private WebDriver driver;
 
     public void setup() throws MalformedURLException {
-        String driverPath = System.getenv("DRIVER_PATH");
-        String driverName = System.getenv("DRIVER");
-        String browserName = System.getenv("BROWSER");
-        System.setProperty(driverName, driverPath);
+        System.setProperty(System.getenv("DRIVER"), System.getenv("DRIVER_PATH"));
         DesiredCapabilities capability;
-        switch (browserName){
+        switch (System.getenv("BROWSER")){
             case "chrome":
                 capability = DesiredCapabilities.chrome();
                 break;
@@ -33,9 +30,9 @@ public class BasePage {
                 capability = DesiredCapabilities.internetExplorer();
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + browserName);
+                throw new IllegalStateException("Unexpected value: " + System.getenv("BROWSER"));
         }
-        capability.setBrowserName(browserName);
+        capability.setBrowserName(System.getenv("BROWSER"));
         capability.setPlatform(Platform.LINUX);
         driver = new RemoteWebDriver(new URL("https://selenium:"+ System.getenv("PW") +"@seleniumhub.codecool.codecanvas.hu/wd/hub"), capability);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
