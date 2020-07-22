@@ -1,10 +1,10 @@
 package pages;
 
-import org.openqa.selenium.Platform;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -17,25 +17,21 @@ public class BasePage {
     private WebDriver driver;
 
     public void setup() throws MalformedURLException {
-        System.setProperty(System.getenv("DRIVER"), System.getenv("DRIVER_PATH"));
-        DesiredCapabilities capability;
         switch (System.getenv("BROWSER")){
             case "chrome":
-                capability = DesiredCapabilities.chrome();
+                driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), new ChromeOptions());
                 break;
             case "firefox":
-                capability = DesiredCapabilities.firefox();
+                driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), new FirefoxOptions());
                 break;
             case "internetExplorer":
-                capability = DesiredCapabilities.internetExplorer();
+                driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), new InternetExplorerOptions());
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + System.getenv("BROWSER"));
         }
-        capability.setBrowserName(System.getenv("BROWSER"));
-        capability.setPlatform(Platform.LINUX);
-        driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), capability);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        driver.manage().timeouts().implicitlyWait(Integer.parseInt(System.getenv("WAIT")), TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(System.getenv("BASE_URL") + "/secure/Dashboard.jspa");
     }
