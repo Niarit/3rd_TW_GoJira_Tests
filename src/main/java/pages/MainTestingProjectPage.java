@@ -33,10 +33,11 @@ public class MainTestingProjectPage {
         summeryEditBtn.click();
         editScreenSummery.sendKeys(Keys.DELETE);
         editScreenSummery.sendKeys(msg);
-        editScreenSubmit.click();
+        editScreenSummery.sendKeys(Keys.ENTER);
     }
 
     public String getSummaryText(){
+        navigateToMTP1Issue();
         return summery.getText();
     }
 
