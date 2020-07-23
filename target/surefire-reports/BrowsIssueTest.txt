@@ -1,0 +1,56 @@
+-------------------------------------------------------------------------------
+Test set: BrowsIssueTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 372.659 s <<< FAILURE! - in BrowsIssueTest
+accessGivenIssues{String, String}[1]  Time elapsed: 41.609 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.fsNHcm}, goog:chromeOptions: {debuggerAddress: localhost:37933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: bf111b7bd8ae52d95f4b8d2aff6...}
+Session ID: bf111b7bd8ae52d95f4b8d2aff69a0bd
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+
+accessGivenIssues{String, String}[2]  Time elapsed: 40.567 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.1GPrRq}, goog:chromeOptions: {debuggerAddress: localhost:42303}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 37432425af8852ca7cf9fd23861...}
+Session ID: 37432425af8852ca7cf9fd23861cf63e
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+
+accessGivenIssues{String, String}[3]  Time elapsed: 37.958 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.DkBtbw}, goog:chromeOptions: {debuggerAddress: localhost:42223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: ad27503d07a4f9cb0513b2aaec6...}
+Session ID: ad27503d07a4f9cb0513b2aaec67d749
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+
+accessGivenIssues{String, String}[4]  Time elapsed: 38.064 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.d3AUBV}, goog:chromeOptions: {debuggerAddress: localhost:43589}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3fc9ea484ba2706cb6cf9c6d9c4...}
+Session ID: 3fc9ea484ba2706cb6cf9c6d9c44355c
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+

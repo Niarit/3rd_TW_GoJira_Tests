@@ -1,0 +1,14 @@
+pages/WelcomePage.class
+pages/IssuesPage.class
+pages/BasePage.class
+pages/ProfilePage.class
+pages/MainTestingProjectPage.class
+pages/ReleasesPage.class
+pages/GlassPage.class
+pages/ProjectPage.class
+pages/AllProjectsPage.class
+pages/PrivateProjectPage.class
+pages/CreatePage.class
+pages/LoginPage.class
+pages/TestIssuePage.class
+pages/ProjectIssuePages.class

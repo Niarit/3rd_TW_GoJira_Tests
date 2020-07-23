@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="CreateIssueTest" time="167.286" tests="5" errors="1" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="13"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/test-classes:/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/classes:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/nia/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/nia/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/nia/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/nia/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/nia/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/nia/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/nia/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/nia/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/nia/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/nia/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.1/junit-jupiter-engine-5.6.1.jar:/home/nia/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-engine/1.6.1/junit-platform-engine-1.6.1.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0.jar:/home/nia/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/nia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-launcher/1.6.0/junit-platform-launcher-1.6.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.6.0/junit-platform-suite-api-1.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.1/junit-jupiter-params-5.6.1.jar:/home/nia/.m2/repository/com/imalittletester/thewaiter/1.0/thewaiter-1.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-java/5.6.0/cucumber-java-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-core/5.6.0/cucumber-core-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin/5.6.0/cucumber-gherkin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin-vintage/5.6.0/cucumber-gherkin-vintage-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4.jar:/home/nia/.m2/repository/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1.jar:/home/nia/.m2/repository/io/cucumber/datatable/3.3.1/datatable-3.3.1.jar:/home/nia/.m2/repository/io/cucumber/cucumber-plugin/5.6.0/cucumber-plugin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/docstring/5.6.0/docstring-5.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.1/junit-jupiter-api-5.6.1.jar:/home/nia/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-commons/1.6.1/junit-platform-commons-1.6.1.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="13"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-oracle/lib"/>
+    <property name="sun.java.command" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire/surefirebooter10173286996946777042.jar /home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire 2020-07-22T10-21-23_199-jvmRun1 surefire5579755509031776634tmp surefire_03127056828631437496tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/test-classes:/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/classes:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/nia/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/nia/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/nia/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/nia/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/nia/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/nia/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/nia/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/nia/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/nia/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/nia/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.1/junit-jupiter-engine-5.6.1.jar:/home/nia/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-engine/1.6.1/junit-platform-engine-1.6.1.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0.jar:/home/nia/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/nia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-launcher/1.6.0/junit-platform-launcher-1.6.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.6.0/junit-platform-suite-api-1.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.1/junit-jupiter-params-5.6.1.jar:/home/nia/.m2/repository/com/imalittletester/thewaiter/1.0/thewaiter-1.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-java/5.6.0/cucumber-java-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-core/5.6.0/cucumber-core-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin/5.6.0/cucumber-gherkin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin-vintage/5.6.0/cucumber-gherkin-vintage-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4.jar:/home/nia/.m2/repository/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1.jar:/home/nia/.m2/repository/io/cucumber/datatable/3.3.1/datatable-3.3.1.jar:/home/nia/.m2/repository/io/cucumber/cucumber-plugin/5.6.0/cucumber-plugin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/docstring/5.6.0/docstring-5.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.1/junit-jupiter-api-5.6.1.jar:/home/nia/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-commons/1.6.1/junit-platform-commons-1.6.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/nia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-01-14"/>
+    <property name="java.home" value="/usr/lib/jvm/java-13-oracle"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire/surefirebooter10173286996946777042.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="13.0.2+8"/>
+    <property name="user.name" value="nia"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.3.0-62-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/nia/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="13.0.2"/>
+    <property name="user.dir" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="13.0.2+8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="57.0"/>
+  </properties>
+  <testcase name="createPlainIssue{String, String, String}[1]" classname="CreateIssueTest" time="42.062"/>
+  <testcase name="cancelCreation{String, String, String}[1]" classname="CreateIssueTest" time="28.654"/>
+  <testcase name="createIssueForProject{String, String}[1]" classname="CreateIssueTest" time="33.127"/>
+  <testcase name="createIssueForProject{String, String}[2]" classname="CreateIssueTest" time="26.993">
+    <error message="begin 0, end -1, length 4" type="java.lang.StringIndexOutOfBoundsException">java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 4
+	at CreateIssueTest.createIssueForProject(CreateIssueTest.java:66)
+</error>
+    <system-err><![CDATA[Jul 22, 2020 10:31:42 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Jul 22, 2020 10:31:45 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="createIssueForProject{String, String}[3]" classname="CreateIssueTest" time="36.43"/>
+</testsuite>

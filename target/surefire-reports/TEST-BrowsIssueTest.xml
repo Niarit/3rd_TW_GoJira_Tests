@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BrowsIssueTest" time="372.659" tests="11" errors="4" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="13"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/test-classes:/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/classes:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/nia/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/nia/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/nia/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/nia/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/nia/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/nia/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/nia/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/nia/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/nia/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/nia/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.1/junit-jupiter-engine-5.6.1.jar:/home/nia/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-engine/1.6.1/junit-platform-engine-1.6.1.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0.jar:/home/nia/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/nia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-launcher/1.6.0/junit-platform-launcher-1.6.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.6.0/junit-platform-suite-api-1.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.1/junit-jupiter-params-5.6.1.jar:/home/nia/.m2/repository/com/imalittletester/thewaiter/1.0/thewaiter-1.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-java/5.6.0/cucumber-java-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-core/5.6.0/cucumber-core-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin/5.6.0/cucumber-gherkin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin-vintage/5.6.0/cucumber-gherkin-vintage-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4.jar:/home/nia/.m2/repository/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1.jar:/home/nia/.m2/repository/io/cucumber/datatable/3.3.1/datatable-3.3.1.jar:/home/nia/.m2/repository/io/cucumber/cucumber-plugin/5.6.0/cucumber-plugin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/docstring/5.6.0/docstring-5.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.1/junit-jupiter-api-5.6.1.jar:/home/nia/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-commons/1.6.1/junit-platform-commons-1.6.1.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="13"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-oracle/lib"/>
+    <property name="sun.java.command" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire/surefirebooter10173286996946777042.jar /home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire 2020-07-22T10-21-23_199-jvmRun1 surefire5579755509031776634tmp surefire_03127056828631437496tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/test-classes:/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/classes:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/home/nia/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/home/nia/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/nia/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/nia/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/nia/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/nia/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/nia/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/nia/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/nia/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/nia/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/home/nia/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.1/junit-jupiter-engine-5.6.1.jar:/home/nia/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-engine/1.6.1/junit-platform-engine-1.6.1.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-runner/1.6.0/junit-platform-runner-1.6.0.jar:/home/nia/.m2/repository/junit/junit/4.13/junit-4.13.jar:/home/nia/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-launcher/1.6.0/junit-platform-launcher-1.6.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-suite-api/1.6.0/junit-platform-suite-api-1.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.1/junit-jupiter-params-5.6.1.jar:/home/nia/.m2/repository/com/imalittletester/thewaiter/1.0/thewaiter-1.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-java/5.6.0/cucumber-java-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-core/5.6.0/cucumber-core-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin/5.6.0/cucumber-gherkin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/cucumber-gherkin-vintage/5.6.0/cucumber-gherkin-vintage-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4.jar:/home/nia/.m2/repository/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1.jar:/home/nia/.m2/repository/io/cucumber/datatable/3.3.1/datatable-3.3.1.jar:/home/nia/.m2/repository/io/cucumber/cucumber-plugin/5.6.0/cucumber-plugin-5.6.0.jar:/home/nia/.m2/repository/io/cucumber/docstring/5.6.0/docstring-5.6.0.jar:/home/nia/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.1/junit-jupiter-api-5.6.1.jar:/home/nia/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/nia/.m2/repository/org/junit/platform/junit-platform-commons/1.6.1/junit-platform-commons-1.6.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/nia"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-01-14"/>
+    <property name="java.home" value="/usr/lib/jvm/java-13-oracle"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests/target/surefire/surefirebooter10173286996946777042.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="13.0.2+8"/>
+    <property name="user.name" value="nia"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.3.0-62-generic"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/nia/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="13.0.2"/>
+    <property name="user.dir" value="/home/nia/codecool/Test/3TW/3rd_TW_GoJira_Tests/3rd_Tw_tests"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="13.0.2+8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="57.0"/>
+  </properties>
+  <testcase name="accessAnIssuesPage" classname="BrowsIssueTest" time="25.137"/>
+  <testcase name="accessAvailableIssues" classname="BrowsIssueTest" time="30.561"/>
+  <testcase name="accessGivenIssues{String, String}[1]" classname="BrowsIssueTest" time="41.609">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#key\-val&quot;}&#10;  (Session info: chrome=76.0.3809.100)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;nia-Precision&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.3.0-62-generic&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.fsNHcm}, goog:chromeOptions: {debuggerAddress: localhost:37933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: bf111b7bd8ae52d95f4b8d2aff6...}&#10;Session ID: bf111b7bd8ae52d95f4b8d2aff69a0bd&#10;*** Element info: {Using=id, value=key-val}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.fsNHcm}, goog:chromeOptions: {debuggerAddress: localhost:37933}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: bf111b7bd8ae52d95f4b8d2aff6...}
+Session ID: bf111b7bd8ae52d95f4b8d2aff69a0bd
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+</error>
+    <system-err><![CDATA[Jul 22, 2020 10:22:19 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Jul 22, 2020 10:22:22 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="accessGivenIssues{String, String}[2]" classname="BrowsIssueTest" time="40.567">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#key\-val&quot;}&#10;  (Session info: chrome=76.0.3809.100)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;nia-Precision&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.3.0-62-generic&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.1GPrRq}, goog:chromeOptions: {debuggerAddress: localhost:42303}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 37432425af8852ca7cf9fd23861...}&#10;Session ID: 37432425af8852ca7cf9fd23861cf63e&#10;*** Element info: {Using=id, value=key-val}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.1GPrRq}, goog:chromeOptions: {debuggerAddress: localhost:42303}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 37432425af8852ca7cf9fd23861...}
+Session ID: 37432425af8852ca7cf9fd23861cf63e
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+</error>
+    <system-err><![CDATA[Jul 22, 2020 10:23:01 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Jul 22, 2020 10:23:03 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="accessGivenIssues{String, String}[3]" classname="BrowsIssueTest" time="37.958">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#key\-val&quot;}&#10;  (Session info: chrome=76.0.3809.100)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;nia-Precision&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.3.0-62-generic&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.DkBtbw}, goog:chromeOptions: {debuggerAddress: localhost:42223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: ad27503d07a4f9cb0513b2aaec6...}&#10;Session ID: ad27503d07a4f9cb0513b2aaec67d749&#10;*** Element info: {Using=id, value=key-val}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.DkBtbw}, goog:chromeOptions: {debuggerAddress: localhost:42223}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: ad27503d07a4f9cb0513b2aaec6...}
+Session ID: ad27503d07a4f9cb0513b2aaec67d749
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+</error>
+    <system-err><![CDATA[Jul 22, 2020 10:23:41 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Jul 22, 2020 10:23:44 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="accessGivenIssues{String, String}[4]" classname="BrowsIssueTest" time="38.064">
+    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#key\-val&quot;}&#10;  (Session info: chrome=76.0.3809.100)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;&#10;System info: host: &apos;nia-Precision&apos;, ip: &apos;127.0.1.1&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.3.0-62-generic&apos;, java.version: &apos;13.0.2&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.d3AUBV}, goog:chromeOptions: {debuggerAddress: localhost:43589}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3fc9ea484ba2706cb6cf9c6d9c4...}&#10;Session ID: 3fc9ea484ba2706cb6cf9c6d9c44355c&#10;*** Element info: {Using=id, value=key-val}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":"#key\-val"}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.d3AUBV}, goog:chromeOptions: {debuggerAddress: localhost:43589}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 3fc9ea484ba2706cb6cf9c6d9c4...}
+Session ID: 3fc9ea484ba2706cb6cf9c6d9c44355c
+*** Element info: {Using=id, value=key-val}
+	at BrowsIssueTest.accessGivenIssues(BrowsIssueTest.java:47)
+</error>
+    <system-err><![CDATA[Jul 22, 2020 10:24:19 AM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFO: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+Jul 22, 2020 10:24:22 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="accessGivenIssues{String, String}[5]" classname="BrowsIssueTest" time="27.83"/>
+  <testcase name="accessGivenIssues{String, String}[6]" classname="BrowsIssueTest" time="34.521"/>
+  <testcase name="accessGivenIssues{String, String}[7]" classname="BrowsIssueTest" time="37.855"/>
+  <testcase name="accessGivenIssues{String, String}[8]" classname="BrowsIssueTest" time="29.073"/>
+  <testcase name="accessGivenIssues{String, String}[9]" classname="BrowsIssueTest" time="29.406"/>
+</testsuite>
