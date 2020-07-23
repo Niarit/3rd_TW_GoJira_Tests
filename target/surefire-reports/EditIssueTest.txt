@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: EditIssueTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 7, Errors: 1, Skipped: 0, Time elapsed: 451.512 s <<< FAILURE! - in EditIssueTest
+checkEditOnGivenIssues{String}[1]  Time elapsed: 40.606 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[2]  Time elapsed: 39.256 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[3]  Time elapsed: 40.567 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[4]  Time elapsed: 37.016 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[7]  Time elapsed: 41.489 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[8]  Time elapsed: 43.323 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+checkEditOnGivenIssues{String}[9]  Time elapsed: 45.998 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at EditIssueTest.checkEditOnGivenIssues(EditIssueTest.java:65)
+
+inlineEditTest  Time elapsed: 32.631 s  <<< ERROR!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'nia-Precision', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-62-generic', java.version: '13.0.2'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.126 (d80a294506b4..., userDataDir: /tmp/.com.google.Chrome.bpDSFN}, goog:chromeOptions: {debuggerAddress: localhost:45777}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: 569f2c103053d73f8e86835f0c9...}
+Session ID: 569f2c103053d73f8e86835f0c98bd35
+	at EditIssueTest.inlineEditTest(EditIssueTest.java:38)
+
