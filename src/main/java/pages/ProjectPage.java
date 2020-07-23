@@ -24,7 +24,7 @@ public class ProjectPage {
         PageFactory.initElements(basePage.getDriver(), this);
     }
 
-    public void navigateToProjectPage() {
+    public void navigateToProjectPage(String projectUrl) {
         basePage.getDriver().navigate().to(projectUrl);
     }
 

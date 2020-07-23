@@ -84,6 +84,9 @@ public class CreatePage {
     }
 
     public String getProjectValidationName() {
+        if(byProjectName.getAttribute("aria-activedescendant").equals("null")){
+            return "null";
+        }
         int length = byProjectName.getAttribute("aria-activedescendant").indexOf("-");
         return byProjectName.getAttribute("aria-activedescendant").substring(0,length);
     }

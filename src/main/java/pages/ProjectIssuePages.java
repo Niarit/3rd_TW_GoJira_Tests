@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.util.List;
@@ -24,6 +25,11 @@ public class ProjectIssuePages {
 
     public String getIssueName(){
         return issueName.getText();
+    }
+
+
+    public boolean checkForPageTitle(){
+        return basePage.getDriver().findElements(By.id("summary-val")).size() != 0;
     }
 
     public void isEditBtnPresent(){

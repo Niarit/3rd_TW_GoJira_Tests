@@ -36,7 +36,7 @@ public class BrowseProjectTest {
     @ValueSource(strings = {"https://jira.codecool.codecanvas.hu/projects/TOUCAN", "https://jira.codecool.codecanvas.hu/projects/JETI", "https://jira.codecool.codecanvas.hu/projects/COALA"})
     public void browseProject(String projectUrl) throws MalformedURLException {
         ProjectPage projectPage = new ProjectPage();
-        projectPage.navigateToProjectPage();
+        projectPage.navigateToProjectPage(projectUrl);
         String projectName = projectUrl.substring(45);
         Assertions.assertTrue(projectPage.getProjectName().contains(projectName));
     }

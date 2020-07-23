@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -44,7 +45,11 @@ public class BrowsIssueTest {
     public void accessGivenIssues(String pageURL, String issueName) throws MalformedURLException {
         basePage.getDriver().navigate().to(pageURL);
         ProjectIssuePages projectIssuePages = new ProjectIssuePages();
-        Assertions.assertEquals(issueName, projectIssuePages.getIssueName());
+        if(projectIssuePages.checkForPageTitle()){
+            Assertions.assertEquals(issueName, projectIssuePages.getIssueName());
+        } else {
+            Assertions.assertTrue(projectIssuePages.checkForPageTitle());
+        }
     }
 
 
