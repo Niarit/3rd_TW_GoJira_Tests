@@ -5,7 +5,7 @@ Contains test written using Selenium and POM desing pattern.
 
 This project is written so, that it can run on remote servers and can be integrated into a Jenkins pipeline.
 
-#Glass
+# Glass
 
 Glass is a Jira addon which makes project managment in Jira way more easier. The clean desing on the addon makes it much easier to see trough the given project.
 
@@ -24,7 +24,7 @@ and readability.
 ![permissions matrix](https://i.imgur.com/Km3wfoN.png)
 
 
-#The project
+# The project
 
 In this project the task was to determind if the latest version of Glass is in a state to release it or not. For this Selenium, Selenium grid, POM desing pattern, Jenkins pipelines and Zalenium (remote server, for test running) was used.
 
